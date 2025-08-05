@@ -5,7 +5,7 @@ FROM tomcat:10.1-jdk17
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy your WAR file and rename it to ROOT.war (auto-deploy)
-COPY ROOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY insta1805.war /usr/local/tomcat/webapps/ROOT.war
 
 # ✅ Download and install PostgreSQL JDBC driver
 ADD https://jdbc.postgresql.org/download/postgresql-42.7.2.jar /usr/local/tomcat/lib/
@@ -18,5 +18,6 @@ EXPOSE 8080
 
 # Start Tomcat
 CMD ["catalina.sh", "run"]
+
 
 
